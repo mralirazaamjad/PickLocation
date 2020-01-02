@@ -12,6 +12,7 @@
 		FBBC081B23BDC34000E33952 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBBC081923BDC34000E33952 /* Main.storyboard */; };
 		FBBC081D23BDC34100E33952 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBBC081C23BDC34100E33952 /* Assets.xcassets */; };
 		FBBC082023BDC34100E33952 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBBC081E23BDC34100E33952 /* LaunchScreen.storyboard */; };
+		FBBC082823BDC38500E33952 /* AddLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBC082723BDC38500E33952 /* AddLocationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		FBBC081C23BDC34100E33952 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FBBC081F23BDC34100E33952 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FBBC082123BDC34100E33952 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBBC082723BDC38500E33952 /* AddLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				FBBC081523BDC34000E33952 /* AppDelegate.swift */,
 				FBBC081723BDC34000E33952 /* ViewController.swift */,
+				FBBC082723BDC38500E33952 /* AddLocationViewController.swift */,
 				FBBC081923BDC34000E33952 /* Main.storyboard */,
 				FBBC081C23BDC34100E33952 /* Assets.xcassets */,
 				FBBC081E23BDC34100E33952 /* LaunchScreen.storyboard */,
@@ -136,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBBC081823BDC34000E33952 /* ViewController.swift in Sources */,
+				FBBC082823BDC38500E33952 /* AddLocationViewController.swift in Sources */,
 				FBBC081623BDC34000E33952 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

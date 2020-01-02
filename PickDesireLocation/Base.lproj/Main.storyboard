@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Eoi-Bp-Hk6">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,103 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PickDesireLocation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NT4-1B-7uY">
+                                <rect key="frame" x="163" y="460" width="88" height="30"/>
+                                <state key="normal" title="Get Location"/>
+                                <connections>
+                                    <segue destination="bQi-zH-VKz" kind="show" id="bpG-me-YXg"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="NT4-1B-7uY" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="pSg-r9-hAK"/>
+                            <constraint firstItem="NT4-1B-7uY" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="vOk-6s-3Ob"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Odw-tU-f6T"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="867" y="759"/>
+        </scene>
+        <!--Add Location View Controller-->
+        <scene sceneID="JnO-rc-kgS">
+            <objects>
+                <viewController storyboardIdentifier="AddLocationViewController" id="bQi-zH-VKz" customClass="AddLocationViewController" customModule="PickDesireLocation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mBH-Vf-dnj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="pc6-cS-8xI">
+                                <rect key="frame" x="0.0" y="98" width="414" height="18"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rgL-nk-wZ0">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" red="0.058823529409999999" green="0.46274509800000002" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dJl-df-dv0">
+                                <rect key="frame" x="0.0" y="126" width="414" height="736"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outlet property="delegate" destination="bQi-zH-VKz" id="mj3-TI-zMI"/>
+                                    <outletCollection property="gestureRecognizers" destination="PfL-Y5-1be" appends="YES" id="duq-0F-kUR"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="5Cg-PK-tTs" firstAttribute="trailing" secondItem="pc6-cS-8xI" secondAttribute="trailing" id="0fe-a7-bpV"/>
+                            <constraint firstItem="dJl-df-dv0" firstAttribute="top" secondItem="pc6-cS-8xI" secondAttribute="bottom" constant="10" id="0nn-Gi-mew"/>
+                            <constraint firstItem="5Cg-PK-tTs" firstAttribute="trailing" secondItem="dJl-df-dv0" secondAttribute="trailing" id="TFZ-ze-TCo"/>
+                            <constraint firstItem="pc6-cS-8xI" firstAttribute="leading" secondItem="5Cg-PK-tTs" secondAttribute="leading" id="Y7M-U6-E1X"/>
+                            <constraint firstItem="pc6-cS-8xI" firstAttribute="top" secondItem="5Cg-PK-tTs" secondAttribute="top" constant="10" id="etK-Ag-l50"/>
+                            <constraint firstItem="5Cg-PK-tTs" firstAttribute="bottom" secondItem="dJl-df-dv0" secondAttribute="bottom" id="kIH-gR-BT7"/>
+                            <constraint firstItem="dJl-df-dv0" firstAttribute="leading" secondItem="5Cg-PK-tTs" secondAttribute="leading" id="wSk-3g-Bdk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5Cg-PK-tTs"/>
+                    </view>
+                    <connections>
+                        <outlet property="lblCountryName" destination="rgL-nk-wZ0" id="CJ8-gL-VBG"/>
+                        <outlet property="mapView" destination="dJl-df-dv0" id="zzJ-l8-38F"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nJY-m2-nBP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="PfL-Y5-1be">
+                    <connections>
+                        <action selector="addPin:" destination="bQi-zH-VKz" id="LZe-ht-aio"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1584" y="761"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mVO-3y-df0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Eoi-Bp-Hk6" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="E5q-i9-b7b">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Z91-le-GO4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZrQ-h9-19c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="759.375"/>
         </scene>
     </scenes>
 </document>
